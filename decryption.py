@@ -64,7 +64,8 @@ The file has been decrypted
 ---------------------------------------
 
 """)
-    os.system("rm " + file)
+    if os.popen('whoami').read() == "root":
+        os.system("rm " + file)
     MAIN_loop()
 
 def MAIN_loop():
